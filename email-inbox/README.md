@@ -44,3 +44,22 @@ The UI exposes a small partner switcher that toggles behavior at runtime.
 ## Notes
 
 This scaffold is designed to be small and easy to extend — if you'd like, I can add tests, responsive layout improvements or a dark mode as next steps.
+
+## Deploying to Netlify
+
+This project is ready to deploy to Netlify. Recommended configuration (Netlify UI or `netlify.toml`):
+
+- Base directory: `email-inbox`
+- Build command: `npm run build`
+- Publish directory: `dist` (Netlify will publish `email-inbox/dist` when base is set)
+
+I added a `netlify.toml` at the repo root and `_redirects` in `email-inbox/public/` to make SPA routing work. To test a production build locally:
+
+```bash
+cd email-inbox
+npm install
+npm run build
+npm run preview
+```
+
+If you'd like, I can also enable Netlify-specific features (branch previews, environment variables) or help connect the repo to Netlify UI.
