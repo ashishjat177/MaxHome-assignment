@@ -1,0 +1,321 @@
+/* =========================
+   Global Reset
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+
+/* =========================
+   App Layout
+========================= */
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-direction: column;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.header .controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================
+   Themes (Partner Based)
+========================= */
+
+.blue {
+  --primary: #2563eb;
+  --background: #eef5ff;
+}
+
+.green {
+  --primary: #059669;
+  --background: #ecfdf5;
+}
+
+.blue,
+.green {
+  background: var(--background);
+  min-height: 100vh;
+}
+
+/* =========================
+   Controls
+========================= */
+
+select,
+input,
+textarea {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+}
+
+input {
+  margin-bottom: 12px;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  border: 1px solid var(--primary);
+  background: white;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+button.danger {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+button.danger:hover {
+  background: #dc2626;
+  color: white;
+}
+
+/* =========================
+   Bulk Actions
+========================= */
+
+.bulk-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   Inbox Layout
+========================= */
+
+.inbox {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* =========================
+   Email List
+========================= */
+
+.email-list {
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+.detail-header-row { display: flex; gap: 12px; align-items: center; }
+.detail-nav { margin-left: 8px; display: flex; gap: 8px; }
+
+.email-item {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+.email-item:last-child {
+  border-bottom: none;
+}
+
+.email-action { display: flex; gap: 12px; align-items: flex-start; }
+.summary-line { display: flex; gap: 12px; align-items: center; }
+.email-sender { font-weight: 600; width: 160px; }
+.email-subject { flex: 1; color: #333; }
+.email-date { color: #777; font-size: 0.9em; }
+.snippet { margin: 4px 0 0; color: #555; }
+.detail-actions { margin-top: 12px; display: flex; gap: 8px; }
+.partner-switcher { margin-bottom: 12px; }
+
+.email-item:hover {
+.email-action { display: flex; gap: 12px; align-items: flex-start; }
+.summary-line { display: flex; gap: 12px; align-items: center; }
+.email-sender { font-weight: 600; width: 160px; }
+.email-subject { flex: 1; color: #333; }
+.email-date { color: #777; font-size: 0.9em; }
+.snippet { margin: 4px 0 0; color: #555; }
+.detail-actions { margin-top: 12px; display: flex; gap: 8px; }
+.partner-switcher { margin-bottom: 12px; }
+  background: #f9fafb;
+}
+
+.email-item.unread {
+  font-weight: 600;
+}
+
+.email-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email-meta {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.email-snippet {
+  font-size: 13px;
+  color: #4b5563;
+  margin-top: 4px;
+}
+
+/* =========================
+   Email Detail View
+========================= */
+
+.email-detail {
+  flex: 1;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+}
+
+/* When in detail-only mode (desktop or otherwise), hide the list and expand detail */
+.detail-only .email-list {
+  display: none;
+}
+.detail-only .email-detail {
+  width: 100%;
+}
+
+.email-detail h3 {
+  margin-top: 0;
+}
+
+.email-detail .from {
+  font-size: 14px;
+  color: #374151;
+}
+
+.email-detail .date {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.email-body {
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+/* =========================
+   Reply Box
+========================= */
+
+.reply-box {
+  margin-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+}
+
+.reply-box textarea {
+  width: 100%;
+  min-height: 80px;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   Responsive (Bonus)
+========================= */
+
+@media (max-width: 768px) {
+  .inbox {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .header .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .email-list {
+    width: 100%;
+  }
+  .email-detail {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  /* When detail is open on mobile hide the list to focus detail */
+  .inbox.show-detail .email-list {
+    display: none;
+  }
+  /* Desktop detail-only mode: hide list and show detail full width */
+  .detail-only .email-list {
+    display: none;
+  }
+  .detail-only .email-detail {
+    width: 100%;
+  }
+
+  /* Make bulk action buttons wrap and full-width on small screens */
+  .bulk-actions {
+    flex-wrap: wrap;
+  }
+  .bulk-actions button {
+    width: auto;
+    margin-bottom: 8px;
+  }
+
+  /* Larger touch targets for checkboxes on mobile */
+  .email-action input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Show a compact back button in detail view */
+  .back-button {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
